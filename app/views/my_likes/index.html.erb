@@ -14,12 +14,11 @@
         <th>Image</th>
         <th>Actions</th>
       </tr>
-
       <% @my_likes.each do |my_like| %>
       <tr>
-        <td><%= my_like.user_id %></td>
-        <td><%= my_like.photo_id %></td>
-        <td><img src="<%= @photo %>"></td>
+        <td><%= my_like.photo.id %></td>
+        <td><%= my_like.photo.caption %></td>
+        <td><img src="<%= my_like.photo.image %>"></td>
         <td>
           <a href="/likes/<%= my_like.id %>" class="btn btn-primary">Show</a>
           <a href="/likes/<%= my_like.id %>/edit" class="btn btn-warning">Edit</a>

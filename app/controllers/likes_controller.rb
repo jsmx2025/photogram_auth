@@ -7,19 +7,16 @@ class LikesController < ApplicationController
 
   def show
     @like = Like.find(params[:id])
-
     render("likes/show.html.erb")
   end
 
   def new
     @like = Like.new
-
     render("likes/new.html.erb")
   end
 
   def create
     @like = Like.new
-
     @like.user_id = params[:user_id]
     @like.photo_id = params[:photo_id]
 

@@ -9,12 +9,13 @@
       <dd><%= @user.id %></dd>
       <dt>Email</dt>
       <dd><%= @user.email %></dd>
-      <dt>Photos</dt>
-      <dd><%= @photo.caption %></dd>
-      <dt>Photo ID</dt>
-      <dd><%= @photo.id %></dd>
-      <dd><img src="<%= @photo.image %>"></dd>
     </dl>
+    <% @user.photos.each do |photo| %>
+      <%= photo.user_id %>
+      <%= photo.caption %>
+      <img src = "<%= photo.image %>">
+    <% end %>
+
   </div>
 
 </div>
